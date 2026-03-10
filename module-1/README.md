@@ -13,10 +13,8 @@ Understanding these concepts is essential before exploring the mechanisms used t
 
 Watch the full lecture below:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y9olqlXkO6s?si=n53sYn5TMU0J4way" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Watch the video](module-1.png)](https://youtu.be/y9olqlXkO6s)
 
-Or open it directly on YouTube:  
-🔗 https://youtu.be/y9olqlXkO6s
 
 ---
 
