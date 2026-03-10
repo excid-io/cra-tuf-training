@@ -13,7 +13,7 @@ Understanding these concepts is essential before exploring the mechanisms used t
 
 Watch the full lecture below:
 
-[![Module 1 – Introduction](https://img.youtube.com/vi/y9olqlXkO6s/maxresdefault.jpg)](https://youtu.be/y9olqlXkO6s)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y9olqlXkO6s?si=n53sYn5TMU0J4way" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Or open it directly on YouTube:  
 🔗 https://youtu.be/y9olqlXkO6s
