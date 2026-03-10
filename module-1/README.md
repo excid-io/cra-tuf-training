@@ -33,4 +33,4 @@ After completing this module, you will be able to:
 
 ➡️ Continue with the next module to learn how **The Update Framework** protects software update systems against advanced adversaries.
 
- **[Go to Module 2 →](module-2/README.md)**
+ **[Go to Module 2 →](../module-2/README.md)**
