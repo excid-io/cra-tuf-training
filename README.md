@@ -4,7 +4,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://img.shields.io/badge/CC--BY--SA--4.0-lightgrey)
+[![project_license][license-shield]][license-url]
 
 <br />
 <div align="center">
@@ -42,21 +42,21 @@ Finally, we review the **client update workflow**, illustrating how clients secu
 ### 📘 Module 1 – Introduction
 This module sets the foundation for the training by presenting **secure software updates** as a core obligation under the **Cyber Resilience Act**. It introduces the regulatory requirements that **Products with Digital Elements** must meet in terms of update security, integrity, authenticity, and lifecycle resilience. The module also presents a **reference software update architecture** and discusses the **main threats** that modern update systems must defend against.
 
-🔗 **[Go to Module 1 →](module1/README.md)**
+🔗 **[Go to Module 1 →](module-1/README.md)**
 
 ---
 
 ### 🔐 Module 2 – The Update Framework
 This module introduces **The Update Framework**, a security framework designed to protect software update systems against advanced adversaries. It explains the main concepts of the framework, including its **roles, metadata, trust model, and security mechanisms**, and shows how it helps build update infrastructures that are resilient to compromise.
 
-🔗 **[Go to Module 2 →](module2/README.md)**
+🔗 **[Go to Module 2 →](module-2/README.md)**
 
 ---
 
 ### 🛠️ Module 3 – Hands-on
 In this module, participants apply the concepts learned in the previous modules through a **hands-on exercise**. We use **TUF-on-CI**, a repository and signing tool based on The Update Framework, to demonstrate how a secure update repository can be created and managed in practice.
 
-🔗 **[Go to Module 3 →](module3/README.md)**
+🔗 **[Go to Module 3 →](module-3/README.md)**
 
 
 [contributors-shield]: https://img.shields.io/github/contributors/excid-io/cra-tuf-training.svg?style=for-the-badge
@@ -67,7 +67,7 @@ In this module, participants apply the concepts learned in the previous modules 
 [stars-url]: https://github.com/excid-io/cra-tuf-training/stargazers
 [issues-shield]: https://img.shields.io/github/issues/excid-io/cra-tuf-training.svg?style=for-the-badge
 [issues-url]: https://github.com/excid-io/cra-tuf-training/issues
-[license-shield]: https://img.shields.io/github/license/excid-io/cra-tuf-training.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/badge/CC--BY--SA--4.0-lightgrey?style=for-the-badge
 [license-url]: https://github.com/excid-io/cra-tuf-training/blob/main/LICENCSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/company/cracy/
