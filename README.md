@@ -75,10 +75,10 @@ Project Link: [https://github.com/excid-io/cra-tuf-training/tree/main](https://g
 
 * [Initial contribution by ExcID](https://excid.io)
 ---
-<img src="img/cracy.jpg" alt="CRACY logo" height="100" >
-<img src="img/excid-logo.svg" alt="ExcID logo" height="100" >
-<img src="img/eccc-logo.svg" alt="ECCC logo" height="100" >
-<img src="img/eu-cofunded-logo.png" alt="EU logo" height="100" >
+<img src="img/cracy.jpg" alt="CRACY logo" height="50" >
+<img src="img/excid-logo.svg" alt="ExcID logo" height="50" >
+<img src="img/eccc-logo.svg" alt="ECCC logo" height="50" >
+<img src="img/eu-cofunded-logo.png" alt="EU logo" height="50" >
 
 [contributors-shield]: https://img.shields.io/github/contributors/excid-io/cra-tuf-training.svg?style=for-the-badge
 [contributors-url]: https://github.com/excid-io/cra-tuf-training/graphs/contributors
