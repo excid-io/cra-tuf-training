@@ -28,7 +28,7 @@ After completing this module, you will be able to:
 
 - Set up a **The Update Framework repository using TUF-on-CI**
 - Configure **GitHub Actions** to manage repository metadata
-- Use **zure Key Vault** and **YubiKey hardware keys** to securely sign metadata
+- Use **Azure Key Vault** and **YubiKey hardware keys** to securely sign metadata
 - Initialize repository roles and trust configuration
 - Add and sign **target files** for distribution
 
@@ -40,21 +40,21 @@ After completing this module, you will be able to:
 
 ### Azure Key Vault 
 
-We will use Azure Key vault for storing the keys for timestamp and snapshot roles. 
+We will use Azure Key Vault for storing the keys for timestamp and snapshot roles. 
 These roles are implemented by a GitHub action, therefore we need enable remote access
 to a signing key. It is assumed that you have already setup an **Elliptic Curve**
-signing key (RSA signing key are not supported by TUF-on-CI). Remote access to this
+signing key (RSA signing keys are not supported by TUF-on-CI). Remote access to this
 key can be enabled following these steps:
 
 * Open the **Azure portal** and go to **Microsoft Entra ID**
-* In the **Manage** menu, select **App registrations** and click New registration.
-* Give it a **Name** such as *github-tuf-on-ci* and click *Register*
+* In the **Manage** menu, select **App registrations** and click **New registration**.
+* Give it a **Name** such as *github-tuf-on-ci* and click **Register**
 * On the app’s Overview page, copy *Application (client) ID*  and *Directory (tenant) ID* 
 * Separately, go to **Subscriptions** (you can type subscriptions in the search box), 
-open the subscription that contains your Key Vault, and copy the *Subscription ID* 
+open the subscription that contains your key vault, and copy the *Subscription ID* 
 
-Next is to tell Azure to trust OIDC tokens coming from your GitHub repository. I
-n Azure Portal, this is done by adding a federated credential to the app registration 
+Next, is to tell Azure to trust OIDC tokens coming from your GitHub repository. In
+ Azure Portal, this is done by adding a federated credential to the app registration 
 under Certificates & secrets. In more detail:
 
 * Open the **Azure portal** and go to **Microsoft Entra ID**.
@@ -62,7 +62,7 @@ under Certificates & secrets. In more detail:
 * Select the application you created with the previous step and in the Manage menu
 on the left select **certificates & secrets**.
 * Click on **Add credential** and in the list of scenarios select **Github Actions deploying Azure resources**
-* Fill in your **Organization** and **Repository**. For example the corresponding values for our
+* Fill in your **Organization** and **Repository**. For example, the corresponding values for our
 demo repository (https://github.com/excid-io/cra-tuf-training-example) are *excid-io*
 and *cra-tuf-training-example*. 
 * In the **Entity type** select *Branch* and in the **Based on selection** textbox
@@ -71,12 +71,12 @@ type main. The subject identifier field should look like this: `repo:excid-io/cr
 
 As a final step we have to assign the *Key Vault Crypto User* role to the application
 we created. First verify that you key vault used RBAC:
-* Open your Key Vault in Azure Portal.
+* Open your key vault in Azure Portal.
 * In the **Settings** menu select **Access configuration**
 * Make sure the permission model is Azure role-based access control
 
 Then,  in the key vault:
-* Open Access control (IAM).
+* Open **Access control (IAM)**
 * Click **Add** → **Add role assignment**
 * Search for and select *Key Vault Crypto User*.
 * Click **Next**
@@ -92,7 +92,7 @@ Create a new repository using the **tuf-on-ci template**:
 
 👉 https://github.com/new?template_name=tuf-on-ci-template&template_owner=theupdateframework
 
-Then perform the following configuration changes in GitHub:
+Then, perform the following configuration changes in GitHub:
 
 - Set **Settings → Pages → Source** to **GitHub Actions**
 - Go to **Settings → Environments → github-pages**
@@ -137,19 +137,10 @@ jobs:
 
 We will now configure the **YubiKey** to store signing keys.
 
-- Install **YubiKey Manager**  
-   https://www.yubico.com/support/download/yubikey-manager/
-
+- Install **YubiKey Manager**  (https://www.yubico.com/support/download/yubikey-manager/)
 - Open **YubiKey Manager**
-
-- Navigate to:
-
-```
-Applications → PIV
-```
-
+- Navigate to **Applications** → **PIV**
 - In **Certificates**, select **Configure Certificates**
-
 - Select **Digital Signature → Generate**
 
 Then choose:
@@ -174,7 +165,7 @@ pip install tuf-on-ci-sign
 ```
 
 **If you are using Azure Key Vault perform the following additional steps:**
-* Install  [azure-cli] (https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
+* Install  [azure-cli](https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
 * Execute 
 
 ```bash
@@ -182,6 +173,7 @@ az login
 ```
 
 `azure-cli` is used by local tools to retrieve the public key from the Azure Key Vault
+
 ---
 
 # 📂 Local Repository Preparation
@@ -223,7 +215,7 @@ During the configuration:
 - For **Configuring role targets**, press *Enter*
 - Configuring online roles, if you use Azure Key vault press *1*
   - Press *3* to select *Azure Key Vault*
-  - Provide your * Azure vault name*
+  - Provide your *Azure vault name*
   - Provide your *key name*
 - Press *Enter* to continue
 - For **Configuring signing key** press *2* to select Yubikey and press *Enter*. Follow
@@ -232,8 +224,8 @@ the instructions in order for the initial metadata files to be singed
 
 After initialization:
 
-1. Go to **GitHub**
-2. Merge the **generated pull request**
+- Go to **GitHub**
+- Merge the **generated pull request**
 
 After a few minutes the repository becomes available online.
 
@@ -247,34 +239,21 @@ https://excid-io.github.io/cra-tuf-training-example/metadata/
 
 # 📦 Adding and Signing a Target
 
-Assume a developer wants to publish a new file:
-
-```
-manifest.json
-```
+Assume a developer wants to publish a new file: `manifest.json`
 
 ### Step 1 – Create a signing branch
 
-Create a branch whose name starts with:
+Create a branch whose name starts with: `sign/`, for example, `sign/manifest`
 
-```
-sign/
-```
-
-Example:
-
-```
-sign/manifest
-```
 
 ### Step 2 – Add the file
 
 The developer:
 
-1. Clones the repository
-2. Checks out the new branch
-3. Adds the target file in the **targets directory**
-4. Commits and pushes the change
+- Clones the repository
+- Checks out the new branch
+- Adds the target file in the **targets directory**
+- Commits and pushes the change
 
 At this stage the file **is not yet part of the repository** because it must still be signed.
 
@@ -293,7 +272,7 @@ Once the pull request is merged, the repository is updated and a new **targets m
 Example:
 
 ```
-https://excid-io.github.io/tuf-on-ci-example/metadata/2.targets.json
+https://excid-io.github.io/cra-tuf-training-example/metadata/2.targets.json
 ```
 
 ---
